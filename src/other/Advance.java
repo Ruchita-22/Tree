@@ -2,7 +2,7 @@ package other;
 
 import java.util.*;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class Advance {
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class LevelWiseLevelOrderTraveersal {
 

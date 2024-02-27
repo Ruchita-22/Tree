@@ -3,7 +3,7 @@ package height;
 import java.util.Deque;
 import java.util.LinkedList;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class MaxWidth {
 

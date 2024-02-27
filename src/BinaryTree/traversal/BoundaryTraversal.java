@@ -3,7 +3,7 @@ package BinaryTree.traversal;
 import java.util.ArrayList;
 import java.util.List;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class BoundaryTraversal {
 
@@ -38,7 +38,7 @@ public class BoundaryTraversal {
 				
 	}
 	//TC - O(n), SC-O(h) stack
-	private static void leafTraversal(TreeNode root) {		// same as inorder
+	private static void leafTraversal(TreeNode root) {		// same as preorder
 		if(root == null)	return;
 		if(root.left == null && root.right == null)	{
 			list.add(root.val);
@@ -55,10 +55,12 @@ public class BoundaryTraversal {
 		if(root.right != null)		rightPart(root.right);
 		else						rightPart(root.left);
 		
-		list.add(root.val);			// take node while returing back
+		list.add(root.val);			// take node while returning back
 				
 	}
 	//TC - O(n), SC-O(h) stack
 	
-
+/*
+ * 872. Leaf-Similar Trees
+ * */
 }

@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Queue;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class LevelOrderTraversal {
 
@@ -24,5 +24,5 @@ public class LevelOrderTraversal {
 		}
 		return list;
 	}
-	//TC - O(n), SC-O(n) queue space
+	//TC - O(n), SC-O(w) queue space
 }

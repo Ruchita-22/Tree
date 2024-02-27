@@ -2,7 +2,7 @@ package major;
 
 import java.util.ArrayList;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class HeightRelated {
 

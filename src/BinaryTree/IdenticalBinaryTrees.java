@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import TreeNode.TreeNode;
+
 public class IdenticalBinaryTrees {
 
 	public static void main(String[] args) {
@@ -9,11 +11,7 @@ public class IdenticalBinaryTrees {
 	
 	// Q1. Identical Binary Trees
 	public int isSameTree(TreeNode A, TreeNode B) {
-		if (solve(A, B))
-			return 1;
-		else
-			return 0;
-
+		return solve(A, B) ? 1 : 0;
 	}
 
 	private static boolean solve(TreeNode A, TreeNode B) {
@@ -25,11 +23,7 @@ public class IdenticalBinaryTrees {
 	}
 	///////////////////////////////////////////////////////////////
 	public int isSymmetric(TreeNode A) {
-		if (isMirror(A.left, A.right))
-			return 1;
-		else
-			return 0;
-
+		return isMirror(A.left, A.right) ? 1 : 0;
 	}
 
 	private static boolean isMirror(TreeNode A, TreeNode B) {

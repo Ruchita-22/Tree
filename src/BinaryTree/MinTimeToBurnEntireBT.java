@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
+import TreeNode.TreeNode;
+
 public class MinTimeToBurnEntireBT {
 
 	public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class MinTimeToBurnEntireBT {
 
 	}
 	//https://practice.geeksforgeeks.org/problems/burning-tree/1
+	//2385. Amount of Time for Binary Tree to Be Infected
 	public static int minTime(TreeNode root, int k) {	
 		
 		

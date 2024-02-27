@@ -1,6 +1,6 @@
 package height;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class PathSum {
 

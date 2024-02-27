@@ -1,6 +1,6 @@
 package major;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class BST {
 	// Binary Search Tree
@@ -87,45 +87,6 @@ public class BST {
 		return max;
 	}
 
-	private static TreeNode insert(TreeNode root, int k) {
-		TreeNode curr = root;
-		TreeNode parent = null;
 
-		// search
-		while (curr != null) {
-			parent = curr;
 
-			if (curr.val == k)
-				break;
-			else if (curr.val > k)
-				curr = curr.left;
-			else
-				curr = curr.right;
-		}
-		// now insert
-		if (parent == null)
-			return new TreeNode(k);
-		else if (parent.val > k)
-			parent.left = new TreeNode(k);
-		else if (parent.val < k)
-			parent.right = new TreeNode(k);
-		return root;
-
-	}
-
-	private static void deteleUtil(TreeNode p, TreeNode t) {
-		if (p.right == t) {
-			p.right = t.right;
-			if (t.left != null)
-				p.right = t.left;
-		} else {
-			p.left = t.right;
-			if (t.left != null)
-				p.right = t.left;
-		}
-	}
-
-	private static void delete(TreeNode root, int k) {
-
-	}
 }

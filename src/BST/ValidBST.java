@@ -1,6 +1,6 @@
 package BST;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class ValidBST {
 
@@ -11,8 +11,7 @@ public class ValidBST {
 
 	// Q1. Valid Binary Search Tree
 	private static boolean isBST(TreeNode root, int low, int high) {
-		if (root == null)
-			return true;
+		if (root == null) return true;
 
 		if (low <= root.val && root.val <= high) {
 			boolean l = isBST(root.left, low, root.val - 1);

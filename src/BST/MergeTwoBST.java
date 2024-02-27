@@ -2,7 +2,7 @@ package BST;
 
 import java.util.ArrayList;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class MergeTwoBST {
 
@@ -39,7 +39,7 @@ public class MergeTwoBST {
 	}
 	private static ArrayList<Integer> merge(ArrayList<Integer> list1, ArrayList<Integer> list2) {
 		// TODO Auto-generated method stub
-		if(list1.size() == 0 && list2.size() ==0)	return new ArrayList<>(0);
+		if(list1.size() == 0 && list2.size() == 0)	return new ArrayList<>(0);
 		if(list1.size() == 0)	return list2;
 		if(list2.size() == 0)	return list1;
 		

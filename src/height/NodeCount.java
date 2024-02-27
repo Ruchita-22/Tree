@@ -1,6 +1,6 @@
 package height;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class NodeCount {
 
@@ -17,8 +17,7 @@ public class NodeCount {
 	}
 
 	public int count(TreeNode root, int a, int b) { // preorder
-		if (root == null)
-			return 0;
+		if (root == null)	return 0;
 		if (a <= root.val && root.val <= b) {
 			count++;
 		}

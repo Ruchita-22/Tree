@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Queue;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class VerticalTraversal {
 
@@ -26,6 +26,8 @@ public class VerticalTraversal {
 	public ArrayList<ArrayList<Integer>> verticalOrderTraversal(TreeNode root) {
 
 		HashMap<Integer, ArrayList<Integer>> map = new HashMap();
+		//vertical level, elements
+		
 		Queue<Pair> q = new ArrayDeque();
 		
 		q.add(new Pair(root, 0));

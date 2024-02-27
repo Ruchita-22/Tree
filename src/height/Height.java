@@ -1,6 +1,6 @@
 package height;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class Height {
 
@@ -18,13 +18,13 @@ public class Height {
 	}
 	//104. Maximum Depth of Binary Tree
 	private static int maxDepth(TreeNode root) {
-		if (root == null)
-			return 0;
+		if (root == null)	return 0;
 
 		int l = maxDepth(root.left);
 		int r = maxDepth(root.right);
 
-		return Math.max(l, r) + 1;
+		return 1 + Math.max(l, r);
 	}
+	
 
 }

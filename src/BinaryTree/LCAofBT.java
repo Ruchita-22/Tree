@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import TreeNode.TreeNode;
+
 public class LCAofBT {
 
 	public static void main(String[] args) {
@@ -77,19 +79,15 @@ public class LCAofBT {
  		
  		// wapas aarahe hai
  		if(left == null && right == null)   return null;
- 		else if(left != null  || right != null){
- 		    
- 		    k--;
- 		    if(k == 0){
- 		        k = Integer.MAX_VALUE;
- 				return root;
- 		    }
- 		    else {
- 		        if(left != null)    return left;
- 		        else return right;
- 		    }
+		
+		k--;
+ 		if(k == 0){
+ 		    k = Integer.MAX_VALUE;
+ 			return root;
+ 	    }
+ 		else {
+			return left != null ? left : right;
  		}
-        else return null;
  	}
 
 }

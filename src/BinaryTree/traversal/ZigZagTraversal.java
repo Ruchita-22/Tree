@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class ZigZagTraversal {
 
@@ -33,8 +33,8 @@ public class ZigZagTraversal {
 				if (node.left != null)		q.add(node.left);
 				if (node.right != null)		q.add(node.right);
 				
-				if (level % 2 == 0)			temp.add(node.val);
-				else						temp.add(0, node.val);
+				if (level % 2 == 0)			temp.add(node.val);  	// add at the end 
+				else						temp.add(0, node.val);	// add at the front
 			}
 			list.add(temp);
 			level++;
@@ -42,6 +42,6 @@ public class ZigZagTraversal {
 		return list;
 
 	}
-	//TC - O(n), SC-O(n) queue space
+	//TC - O(n), SC-O(w) queue space
 
 }

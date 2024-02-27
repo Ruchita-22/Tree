@@ -3,7 +3,7 @@ package BST;
 import java.util.ArrayList;
 import java.util.List;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class PredecessorSuccessorinBST {
 

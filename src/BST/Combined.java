@@ -3,7 +3,7 @@ package BST;
 import java.util.ArrayList;
 import java.util.List;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class Combined {
 
@@ -122,14 +122,14 @@ public class Combined {
  	//approach1 one find inorder using extra space and then convert
  	// approach 2 without extra space
  	
- 	 static TreeNode res;
+ 	 static TreeNode newHead;
      static TreeNode curr;
      public TreeNode increasingBST(TreeNode root) {
          
-    	 res = new TreeNode(0);
-         curr = res;
+    	 newHead = new TreeNode(0);
+         curr = newHead;
          inorder(root);
-         return res.right;
+         return newHead.right;
      }
      private static void  inorder(TreeNode root){
          if(root == null) return;
@@ -189,10 +189,10 @@ public class Combined {
 
  	private static void findCulprit(TreeNode curr) {
 
- 		if (curr == null)
- 			return;
+ 		if (curr == null)	return;
 
  		findCulprit(curr.left);
+ 		
  		if (prev != null && prev.val > curr.val) {
  			if (first == null)
  				first = prev;

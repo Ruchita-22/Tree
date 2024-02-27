@@ -1,6 +1,6 @@
 package BST;
 
-import BinaryTree.TreeNode;
+import TreeNode.TreeNode;
 
 public class SizeOfLargestBSTinBT {
 
@@ -35,16 +35,18 @@ public class SizeOfLargestBSTinBT {
         Info left = solve(root.left);
         Info right = solve(root.right);
         
+      
         Info curr = new Info();
         curr.size = left.size + right.size + 1;
        
         curr.maxi = Math.max(root.val, right.maxi);
         curr.mini = Math.min(root.val, left.mini);
+        
         if(left.isBST && right.isBST && left.maxi < root.val && root.val < right.mini){
             curr.isBST = true;
-        }
-        else 
+        } else 
             curr.isBST = false;
+        
         if(curr.isBST == true){
             maxSize = Math.max(maxSize, curr.size);
 

@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import TreeNode.TreeNode;
+
 public class FlattenBTtoLL {
 
 	public static void main(String[] args) {
