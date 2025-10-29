@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import BST.MaximumSumBSTinBT;
 import TreeNode.TreeNode;
 
 public class OtherQuestion {
@@ -134,4 +135,52 @@ public class OtherQuestion {
 		preorder(root.left, min, max);
 		preorder(root.right, min, max);
 	}
+	//124. Binary Tree Maximum Path Sum
+	static int maxSum = Integer.MIN_VALUE;
+	public int maxPathSum(TreeNode root) {
+		maxSum = Integer.MIN_VALUE;
+		solve(root);
+		
+        return maxSum;
+        
+    }
+	private static int solve(TreeNode root) {
+		// TODO Auto-generated method stub
+		if(root  == null) return 0;
+		int l = solve(root.left);
+		int r = solve(root.right);
+		
+		int neeche_hi__ans_mila = l + r + root.val;
+		int koi_ek_acha = Math.max(l, r) + root.val;
+		int only_root_acha = root.val;
+		
+		maxSum = Math.max(maxSum, neeche_hi__ans_mila);
+		maxSum = Math.max(maxSum, koi_ek_acha);
+		maxSum = Math.max(maxSum, only_root_acha);
+
+		return Math.max(koi_ek_acha, only_root_acha);
+		
+	}
+	//968. Binary Tree Cameras
+	static int count = 0;
+    public int minCameraCover(TreeNode root) {
+        count  = 0;
+        if(dfs(root) == -1) count++;
+        return count;
+    }
+    private static int dfs(TreeNode root) {
+        if(root == null) return 1;
+        if(root.left == null && root.right == null) return -1;
+        
+        int l = dfs(root.left);
+        int r = dfs(root.right);
+        if(l == -1 || r == -1)  {
+            count++;
+            return 0;
+        }
+        if(l == 0 || r == 0){
+            return 1;
+        }
+        return -1;
+    }
 }

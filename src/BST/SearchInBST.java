@@ -10,12 +10,12 @@ public class SearchInBST {
 	}
 	private static boolean search(TreeNode root, int k) {
 
-		TreeNode p = root;
+		TreeNode curr = root;
 
-		while (p != null) {
-			if (p.val == k)			return true;
-			else if (p.val > k)		p = p.left;
-			else					p = p.right;
+		while (curr != null) {
+			if (curr.val == k)			return true;
+			else if (curr.val > k)		curr = curr.left;
+			else					curr = curr.right;
 		}
 		return false;
 	}

@@ -35,7 +35,7 @@ public class MaximumSumBSTinBT {
         
         Info curr = new Info();
         
-        if(left.maxi < root.val && root.val  < right.mini){
+        if(left.maxi < root.val && root.val  < right.mini){			// is BST
             
             curr.maxi = Math.max(root.val, Math.max(left.maxi, right.maxi));
             curr.mini = Math.min(root.val, Math.min(left.mini, right.mini));

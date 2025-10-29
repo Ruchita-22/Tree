@@ -40,9 +40,9 @@
 	) Inverted BT
 	) LCA of BT		//imp
 	) Kth ancestor		// imp
-	) Flatten BT to LL - Application for Morris inorder traversal
-	) Populating Next Right Pointers in Each Node - Application of Level Order Traversal
-	) Min time to burn entire BT
+- [Flatten BT to LL](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/) - Application for Morris inorder traversal
+- [Populating Next Right Pointers in Each Node]() - Application of Level Order Traversal
+- Min time to burn entire BT
 			2385. Amount of Time for Binary Tree to Be Infected
 	
 	
@@ -82,4 +82,6 @@
 	sum of longest path
 	Max Width
 	
+	
+
 	

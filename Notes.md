@@ -1,9 +1,9 @@
 # Tree
 
 
-##### Tree Traversal
+### Tree Traversal
 	
-##### Recursive Approach
+#### Recursive Approach
 	
 	static ArrayList<Integer> list = new ArrayList<>();
 	public int[] inorderTraversal(TreeNode root) {
@@ -24,7 +24,7 @@
 	//TC - O(n), SC-O(h) stack space
 	
 	
-##### Iterative Approach
+#### Iterative Approach
 
 	private static void inorder1(TreeNode root) {
 		Stack<TreeNode> stack = new Stack<>();
@@ -43,7 +43,7 @@
 	}
 	//TC - O(n), SC-O(h) stack space
 	
-#####  Morris Inorder Traversal = no extra space is required
+####  Morris Inorder Traversal = no extra space is required
 	
 	public ArrayList<Integer> inorder2(TreeNode root) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -72,7 +72,7 @@
         return list;
 	}
 	
-#####  LevelOrderTraversal	
+####  Level Order Traversal	
 
 	private static ArrayList<Integer> levelOrderTravesal(TreeNode root) {
 		Queue<TreeNode> q = new ArrayDeque<>();
@@ -89,7 +89,7 @@
 	//TC - O(n), SC-O(width) queue space
 	
 	
-##### LevelWiseLevelOrderTraveersal	
+#### Level Wise Level Order Traversal	
 
 	private static ArrayList<ArrayList<Integer>> levelWiseLevelOrderTravesal1(TreeNode root) {
 		Queue<TreeNode> q = new LinkedList<>();
@@ -114,14 +114,13 @@
 	
 	//TC - O(n), SC-O(w) queue space
 	
-##### ZigZagTraversal
+#### ZigZagTraversal
 
 	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
 
 		List<List<Integer>> list = new ArrayList<>();
 		
-		if (root == null)
-			return list;
+		if (root == null)	return list;
 
 		Queue<TreeNode> q = new LinkedList<>();
 		q.add(root);
@@ -146,7 +145,7 @@
 	}
 	//TC - O(n), SC-O(w) queue space
 
-##### VerticalTraversal
+#### VerticalTraversal
 
 	class Pair {
 		TreeNode node;
@@ -192,7 +191,7 @@
 		return res;
 	}		
 	
-##### searlize and desearlize - application of level order traversal
+#### searlize and desearlize - application of level order traversal
 
 	public ArrayList<Integer> searlize(TreeNode root) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -230,7 +229,7 @@
         return root;  
     }
 
-##### FlattenBTtoLL - Application for Morris inorder traversal
+#### FlattenBTtoLL - Application for Morris inorder traversal
 
 	public void flatten(TreeNode root) {
         if(root == null)    return;
@@ -253,7 +252,7 @@
 			}
 		}   
     }
-##### Populating Next Right Pointers in Each Node - Application of Level Order Traversal
+#### Populating Next Right Pointers in Each Node - Application of Level Order Traversal
 
 	public Node connect(Node root) {
         if(root == null)    return null;
@@ -277,7 +276,7 @@
         
 	}
 
-##### MinTimeToBurnEntireBT
+#### MinTimeToBurnEntireBT
 	
 	public static int minTime(TreeNode root, int k) {	
 		
@@ -348,7 +347,7 @@
         
     }
     	    
-##### LCA of BT
+#### LCA of BT
 
 	private static TreeNode lca(TreeNode root, int a, int b) {
     	if(root == null)	return null;
@@ -362,7 +361,7 @@
     	else	return root;
 	}
     
-##### kthAncestor
+#### kthAncestor
     
     static int k = 0;
     public int kthAncestor(TreeNode root, int kth, int node)
@@ -393,7 +392,7 @@
  	
 ### BST
 
-##### Search in BST
+#### Search in BST
 
 	private static boolean search(TreeNode root, int k) {
 
@@ -406,7 +405,7 @@
 		}
 		return false;
 	}
-##### Valid BST
+#### Valid BST
 	
 	private static boolean isBST(TreeNode root, int low, int high) {
 		if (root == null) return true;
@@ -419,7 +418,7 @@
 		return false;
 	}
 	 	 	
-##### LCA in BST	
+#### LCA in BST	
 
 	private static TreeNode lca(TreeNode root, int a, int b) {
 		TreeNode p = root;

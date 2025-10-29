@@ -40,8 +40,8 @@ public class VerticalTraversal {
 			TreeNode node = x.node;
 
 			map.putIfAbsent(level, new ArrayList());
-			ArrayList temp = map.get(level);
-			temp.add(node.val);
+			map.get(level).add(node.val);
+			
 
 			minL = Math.min(minL, level);
 			maxL = Math.max(maxL, level);

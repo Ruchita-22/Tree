@@ -14,15 +14,12 @@ public class Combined {
 	
 	private static boolean search(TreeNode root, int k) {
 
-		TreeNode p = root;
+		TreeNode curr = root;
 
-		while (p != null) {
-			if (p.val == k)
-				return true;
-			else if (p.val > k)
-				p = p.left;
-			else
-				p = p.right;
+		while (curr != null) {
+			if (curr.val == k)			return true;
+			else if (curr.val > k)		curr = curr.left;
+			else					curr = curr.right;
 		}
 		return false;
 	}
@@ -32,8 +29,7 @@ public class Combined {
 	
 	// Q1. Valid Binary Search Tree
 	private static boolean isBST(TreeNode root, int low, int high) {
-		if (root == null)
-			return true;
+		if (root == null)		return true;
 
 		if (low <= root.val && root.val <= high) {
 			boolean l = isBST(root.left, low, root.val - 1);
@@ -44,11 +40,11 @@ public class Combined {
 	}
 	
 	private static TreeNode lca(TreeNode root, int a, int b) {
-		TreeNode p = root;
-		while(p != null) {
-			if(p.val > a && p.val > b)	p = p.left;
-			else if(p.val < a && p.val < b)	p = p.right;
-			else return p;
+		TreeNode curr = root;
+		while(curr != null) {
+			if(curr.val > a && curr.val > b)	curr = curr.left;
+			else if(curr.val < a && curr.val < b)	curr = curr.right;
+			else return curr;
 		}
 		return null;
 	}
@@ -104,12 +100,12 @@ public class Combined {
  	}
 
  	private static void insert(TreeNode root, int val) {
- 		TreeNode p = root, parent = null;
+ 		TreeNode curr = root, parent = null;
 
- 		while (p != null) {
- 			parent = p;
- 			if (val <= p.val)	p = p.left;
- 			else				p = p.right;
+ 		while (curr != null) {
+ 			parent = curr;
+ 			if (val <= curr.val)	curr = curr.left;
+ 			else				curr = curr.right;
  		}
 
  		if (val <= parent.val)

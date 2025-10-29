@@ -13,6 +13,7 @@ public class LevelWiseLevelOrderTraveersal {
 
 	}
 	private static ArrayList<ArrayList<Integer>> levelWiseLevelOrderTravesal(TreeNode root) {
+		// by adding null approach
 		Queue<TreeNode> q = new LinkedList<>();
 		ArrayList<ArrayList<Integer>> list = new ArrayList<>();
 		ArrayList<Integer> temp = new ArrayList<>();
