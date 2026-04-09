@@ -1,10 +1,7 @@
 package BinaryTree;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
+
 
 import TreeNode.TreeNode;
 
@@ -32,6 +29,27 @@ public class LevelWiseLevelOrderTraversal {
 				temp = new ArrayList<>();
 				if(q.size()>0)	q.add(null);
 			}
+		}
+		return list;
+	}
+	// new way
+	private static ArrayList<ArrayList<Integer>> levelWiseLevelOrderTravesal1(TreeNode root) {
+		Queue<TreeNode> q = new LinkedList<>();
+		ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+		
+		q.add(root);
+		
+		while (q.size() > 0) {
+			int size = q.size();
+			ArrayList<Integer> temp = new ArrayList<>();
+			
+			for(int i = 0; i < size; i++) {
+				TreeNode node = q.poll();
+				temp.add(node.val);
+				if(node.left != null)	q.add(node.left);
+				if(node.right != null)	q.add(node.right);	
+			}
+			list.add(temp);
 		}
 		return list;
 	}
@@ -79,110 +97,6 @@ public class LevelWiseLevelOrderTraversal {
             }
         }
         return (int)(odd-even);
-    }
-	
-	//Q1. Left View of Binary tree
-	public ArrayList<Integer> leftView(TreeNode root) {
-
-		ArrayList<Integer> list = new ArrayList<>();
-		Queue<TreeNode> q = new LinkedList<>();
-
-		q.add(root);
-		q.add(null);
-
-		boolean flag = true;
-		// here we use L-R level order traversal
-		while (q.size() > 1) {
-			TreeNode x = q.poll();
-			if (x != null) {
-				if (flag == true) {
-					list.add(x.val);
-					flag = false;
-				}
-				if (x.left != null)		q.add(x.left);
-				if (x.right != null)	q.add(x.right);
-
-			} else {
-				flag = true;
-				q.add(null);
-			}
-
-		}
-		return list;
-	}
-	//Q1. Right View of Binary tree
-	// this code is giving TLE
-	public ArrayList<Integer> rightView(TreeNode root) {
-
-		ArrayList<Integer> list = new ArrayList<>();
-		Queue<TreeNode> q = new LinkedList<>();
-		q.add(root);
-		q.add(null);
-
-		// here we use R-L level order traversal
-		boolean flag = true;
-		while (q.size() > 1) {
-			TreeNode x = q.poll();
-			if (x != null) {
-				if (flag == true) {
-					list.add(x.val);
-					flag = false;
-				}
-				if (x.right != null)
-					q.add(x.right);
-				if (x.left != null)
-					q.add(x.left);
-			} else {
-				q.add(null);
-				flag = true;
-			}
-		}
-		return list;
-	}
-	public List<Integer> rightSideView1(TreeNode root) {
-        //    Write your code here.
-        if(root == null)    return new ArrayList<Integer>(0);
-        List<Integer> list = new ArrayList<>();
-        ArrayList<Integer> temp = new ArrayList<>();
-		Queue<TreeNode> q = new LinkedList<>();
-        
-		q.add(root);
-		q.add(null);
-        
-
-	
-		while (q.size() > 0) {
-			TreeNode x = q.poll();
-			if (x != null) {
-				
-				temp.add(x.val);	
-				if (x.right != null)    q.add(x.right);
-				if (x.left != null)     q.add(x.left);
-			} 
-            else {
-                list.add(temp.get(0));
-                temp = new ArrayList<>();
-				if(q.size()>0)  q.add(null);
-				
-			}
-		}
-		return list;
-    
-    }
-	// recursive approach
-	public List<Integer> rightSideView(TreeNode root) {
-        ArrayList<Integer> list = new ArrayList<>();
-        rightView(root, list, 0);
-        return list;
-    }
-   private static void rightView(TreeNode root, List<Integer> list, int level){
-        if(root == null)    return;
-
-        if(list.size() == level) list.add(root.val);
-        
-        rightView(root.right, list, level+1);
-        rightView(root.left, list, level+1);
-        
     }
 
 }

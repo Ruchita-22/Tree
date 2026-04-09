@@ -7,12 +7,8 @@ import TreeNode.TreeNode;
 
 public class Combined {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 	
-	private static boolean search(TreeNode root, int k) {
+	private boolean search(TreeNode root, int k) {
 
 		TreeNode curr = root;
 
@@ -28,7 +24,7 @@ public class Combined {
 	// balance BST < BST < skew
 	
 	// Q1. Valid Binary Search Tree
-	private static boolean isBST(TreeNode root, int low, int high) {
+	private boolean isBST(TreeNode root, int low, int high) {
 		if (root == null)		return true;
 
 		if (low <= root.val && root.val <= high) {
@@ -39,7 +35,7 @@ public class Combined {
 		return false;
 	}
 	
-	private static TreeNode lca(TreeNode root, int a, int b) {
+	private TreeNode lca(TreeNode root, int a, int b) {
 		TreeNode curr = root;
 		while(curr != null) {
 			if(curr.val > a && curr.val > b)	curr = curr.left;

@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import TreeNode.TreeNode;
@@ -50,6 +51,25 @@ public class View {
 			}
 		}
 		return list;
+	}
+
+	// recursive approach
+	public List<Integer> rightSideView(TreeNode root) {
+		ArrayList<Integer> list = new ArrayList<>();
+		rightView(root, list, 0);
+		return list;
+	}
+
+	private static void rightView(TreeNode root, List<Integer> list, int level) {
+		if (root == null)
+			return;
+
+		if (list.size() == level)
+			list.add(root.val);
+
+		rightView(root.right, list, level + 1);
+		rightView(root.left, list, level + 1);
+
 	}
 	class Pair {
 		TreeNode node;
